@@ -15,7 +15,6 @@ import java.awt.event.ActionEvent;
 public class Calculadora extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -52,11 +51,16 @@ public class Calculadora extends JFrame {
 		lbEtiquetaPrincipal.setBounds(218, 10, 130, 43);
 		contentPane.add(lbEtiquetaPrincipal);
 		
+		JLabel lb_resultado = new JLabel("");
+		lb_resultado.setBackground(new Color(255, 255, 255));
+		lb_resultado.setForeground(new Color(0, 0, 0));
+		lb_resultado.setBounds(98, 45, 350, 38);
+		contentPane.add(lb_resultado);
+		
 		JButton bt1_0 = new JButton("1");
 		bt1_0.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				numer.add(1);
-				
+				lb_resultado.setText("1");
 			}
 		});
 		bt1_0.setForeground(new Color(255, 255, 255));
@@ -154,16 +158,13 @@ public class Calculadora extends JFrame {
 		bt1_15.setBounds(367, 263, 53, 32);
 		contentPane.add(bt1_15);
 		
-		textField = new JTextField();
-		textField.setBounds(51, 52, 452, 31);
-		contentPane.add(textField);
-		textField.setColumns(10);
-		
 		JButton bt1_15_1 = new JButton("<<");
 		bt1_15_1.setForeground(Color.WHITE);
 		bt1_15_1.setBackground(Color.BLACK);
 		bt1_15_1.setBounds(449, 93, 53, 32);
 		contentPane.add(bt1_15_1);
+		
+		
 	}
 
 }
