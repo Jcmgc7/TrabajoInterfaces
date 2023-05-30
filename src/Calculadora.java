@@ -15,11 +15,9 @@ import java.awt.event.ActionEvent;
 public class Calculadora extends JFrame {
 
 	 private JPanel contentPane;
+	 private String n1, n2, resultado;
 	 private String op;
-	 private double total = 0;
-	 private double total1 = 1;
-	 private double total2 ;
-
+	 private int cont= 0;
 	/**
 	 * Launch the application.
 	 */
@@ -46,6 +44,7 @@ public class Calculadora extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 627, 421);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(0, 128, 192));
 		contentPane.setForeground(new Color(0, 0, 0));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -58,7 +57,7 @@ public class Calculadora extends JFrame {
 		contentPane.add(lbEtiquetaPrincipal);
 		
 		JLabel lb_resultado = new JLabel("");
-		lb_resultado.setBackground(new Color(255, 255, 255));
+		lb_resultado.setBackground(new Color(64, 128, 128));
 		lb_resultado.setForeground(new Color(0, 0, 0));
 		lb_resultado.setBounds(98, 45, 350, 38);
 		contentPane.add(lb_resultado);
@@ -166,9 +165,9 @@ public class Calculadora extends JFrame {
 		JButton bt1_9 = new JButton("+");
 		bt1_9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				numeros.add(Double.parseDouble(lb_resultado.getText()));
+				n1=lb_resultado.getText();
+				op="+";
 				lb_resultado.setText("");
-				op = "+";
 			}
 		});
 		bt1_9.setForeground(Color.WHITE);
@@ -179,7 +178,7 @@ public class Calculadora extends JFrame {
 		JButton bt1_10 = new JButton("-");
 		bt1_10.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				numeros.add(Double.parseDouble(lb_resultado.getText()));
+				n1=lb_resultado.getText();
 				lb_resultado.setText("");
 				op = "-";
 			}
@@ -192,7 +191,7 @@ public class Calculadora extends JFrame {
 		JButton btnX = new JButton("x");
 		btnX.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				numeros.add(Double.parseDouble(lb_resultado.getText()));
+				n1=lb_resultado.getText();
 				lb_resultado.setText("");
 				op = "x";
 			}
@@ -205,7 +204,7 @@ public class Calculadora extends JFrame {
 		JButton bt1_12 = new JButton("/");
 		bt1_12.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				numeros.add(Double.parseDouble(lb_resultado.getText()));
+				n1=lb_resultado.getText();
 				lb_resultado.setText("");
 				op = "/";
 			}
@@ -229,7 +228,13 @@ public class Calculadora extends JFrame {
 		JButton bt1_14 = new JButton(",");
 		bt1_14.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				lb_resultado.setText(lb_resultado.getText()+".");
+				if (cont == 0) {
+					lb_resultado.setText(lb_resultado.getText()+".");
+					cont = 1;
+				}
+				if (lb_resultado.getText().equals("")) {
+					lb_resultado.setText(lb_resultado.getText()+"0.");
+				}
 			}
 		});
 		bt1_14.setForeground(Color.WHITE);
@@ -240,31 +245,23 @@ public class Calculadora extends JFrame {
 		JButton bt1_15 = new JButton("=");
 		bt1_15.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				numeros.add(Double.parseDouble(lb_resultado.getText()));
-				lb_resultado.setText("");
-				for (int i=0;i<numeros.size();i++) {
-					switch(op) {
+				n2=lb_resultado.getText();
+				
+				switch(op) {
 					case "+":
-						total = total + numeros.get(i);
+						resultado = String.valueOf(Double.parseDouble(n1) + Double.parseDouble(n2));
+						lb_resultado.setText(resultado);
 						break;
 					case "-":
-						total = numeros.get(0) -  numeros.get(1);
+						resultado = String.valueOf(Double.parseDouble(n1) - Double.parseDouble(n2));
 						break;
 					case "x":
-						total1 =numeros.get(i)*total1;
+						resultado = String.valueOf(Double.parseDouble(n1) * Double.parseDouble(n2));
 						break;
 					case "/":
-						total1 = numeros.get(0)/numeros.get(1);
+						resultado = String.valueOf(Double.parseDouble(n1) / Double.parseDouble(n2));
 						break;
 					}
-				}
-				if (op.equals("+") || op.equals("-")){
-					lb_resultado.setText(""+total);
-				}
-				if (op.equals("x") || op.equals("/")){
-					lb_resultado.setText(""+total1);
-				}
-				
 			}
 		});
 		bt1_15.setForeground(Color.WHITE);
@@ -278,8 +275,6 @@ public class Calculadora extends JFrame {
 				lb_resultado.setText("");
 				for(int i=0;i<numeros.size();i++) {
 					numeros.remove(i);
-					total =0;
-					total1=1;
 				}
 			}
 		});
