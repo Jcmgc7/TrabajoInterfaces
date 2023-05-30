@@ -127,7 +127,7 @@ public class Calculadora extends JFrame {
 		JButton bt1_6 = new JButton("3");
 		bt1_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				lb_resultado.setText("3");
+				lb_resultado.setText(lb_resultado.getText()+"3");
 			}
 		});
 		bt1_6.setForeground(Color.WHITE);
