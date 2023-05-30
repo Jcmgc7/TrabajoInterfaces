@@ -248,7 +248,7 @@ public class Calculadora extends JFrame {
 						total = total + numeros.get(i);
 						break;
 					case "-":
-						total = total - numeros.get(i);
+						total = numeros.get(0) -  numeros.get(1);
 						break;
 					case "x":
 						total1 =numeros.get(i)*total1;
