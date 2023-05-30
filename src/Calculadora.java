@@ -60,7 +60,8 @@ public class Calculadora extends JFrame {
 		JButton bt1_0 = new JButton("1");
 		bt1_0.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				lb_resultado.setText("1");
+				lb_resultado.setText(lb_resultado.getText()+"1");
+				
 			}
 		});
 		bt1_0.setForeground(new Color(255, 255, 255));
@@ -71,7 +72,7 @@ public class Calculadora extends JFrame {
 		JButton bt1_1 = new JButton("4");
 		bt1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				lb_resultado.setText("4");
+				lb_resultado.setText(lb_resultado.getText()+"4");
 			}
 		});
 		bt1_1.setForeground(Color.WHITE);
@@ -82,7 +83,7 @@ public class Calculadora extends JFrame {
 		JButton bt1_2 = new JButton("7");
 		bt1_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				lb_resultado.setText("2");
+				lb_resultado.setText(lb_resultado.getText()+"7");
 			}
 		});
 		bt1_2.setForeground(Color.WHITE);
@@ -93,7 +94,7 @@ public class Calculadora extends JFrame {
 		JButton bt1_3 = new JButton("2");
 		bt1_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				lb_resultado.setText("2");
+				lb_resultado.setText(lb_resultado.getText()+"2");
 			}
 		});
 		bt1_3.setForeground(Color.WHITE);
@@ -104,7 +105,7 @@ public class Calculadora extends JFrame {
 		JButton bt1_4 = new JButton("5");
 		bt1_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				lb_resultado.setText("5");
+				lb_resultado.setText(lb_resultado.getText()+"5");
 			}
 		});
 		bt1_4.setForeground(Color.WHITE);
@@ -115,7 +116,7 @@ public class Calculadora extends JFrame {
 		JButton bt1_5 = new JButton("8");
 		bt1_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				lb_resultado.setText("8");
+				lb_resultado.setText(lb_resultado.getText()+"8");
 			}
 		});
 		bt1_5.setForeground(Color.WHITE);
@@ -137,7 +138,7 @@ public class Calculadora extends JFrame {
 		JButton bt1_7 = new JButton("6");
 		bt1_7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				lb_resultado.setText("6");
+				lb_resultado.setText(lb_resultado.getText()+"6");
 			}
 		});
 		bt1_7.setForeground(Color.WHITE);
@@ -148,7 +149,7 @@ public class Calculadora extends JFrame {
 		JButton bt1_8 = new JButton("9");
 		bt1_8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				lb_resultado.setText("9");
+				lb_resultado.setText(lb_resultado.getText()+"9");
 			}
 		});
 		bt1_8.setForeground(Color.WHITE);
@@ -183,7 +184,7 @@ public class Calculadora extends JFrame {
 		JButton bt1_13 = new JButton("0");
 		bt1_13.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				lb_resultado.setText("0");
+				lb_resultado.setText(lb_resultado.getText()+"0");
 			}
 		});
 		bt1_13.setForeground(Color.WHITE);
@@ -194,7 +195,7 @@ public class Calculadora extends JFrame {
 		JButton bt1_14 = new JButton(",");
 		bt1_14.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				lb_resultado.setText(",");
+				lb_resultado.setText(lb_resultado.getText()+".");
 			}
 		});
 		bt1_14.setForeground(Color.WHITE);
