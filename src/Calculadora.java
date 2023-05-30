@@ -279,7 +279,7 @@ public class Calculadora extends JFrame {
 				for(int i=0;i<numeros.size();i++) {
 					numeros.remove(i);
 					total =0;
-					total1=0;
+					total1=1;
 				}
 			}
 		});
